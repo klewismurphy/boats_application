@@ -8,4 +8,18 @@ class BoatsController < ApplicationController
     @boat = Boat.find_by(id: params[:id])
     render "show.html.erb"
   end
+
+  def new
+    render "new.html.erb"
+  end
+
+  def create
+    @boat = Boat.new(
+      name: params[:name],
+      price: params[:price],
+      color: params[:color],
+    )
+    @boat.save
+    redirect_to "/boats/#{@boat.id}"
+  end
 end

@@ -1,8 +1,6 @@
 <h2>All Boats All the Time</h2>
 <hr>
 <% @boats.each do |boat| %>
-<p><%= boat.name %></p>
-<p><%= boat.price %></p>
-<p><%= boat.color %></p>
+<p>Boat: <a href="/boats/<%= boat.id %>"><%= boat.name %></a></p>
 <hr>
 <% end %>
